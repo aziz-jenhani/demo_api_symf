@@ -1,0 +1,13 @@
+App\Entity\User:
+  user_admin:
+    email: admin@localhost.lo
+    firstname: Admin
+    lastname: Admin
+    password: <argon('adminpass')>
+    roles: [ROLE_ADMIN]
+
+  user_user:
+    email: user@localhost.lo
+    firstname: User
+    lastname: User
+    password: <argon('userpass')>
