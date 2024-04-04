@@ -15,20 +15,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: "`user`")]
 #[UniqueEntity('email', 'Cet email existe déjà.')]
-
 #[ORM\HasLifecycleCallbacks]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    // #[ORM\Id]
-    // #[ORM\GeneratedValue(strategy: 'NONE')]
-    // #[ORM\Column(type: 'uuid')]
-    // #[Groups('default')]
-    // private Uuid $id;
-
     #[ORM\Id]
-    #[ORM\GeneratedValue('CUSTOM')]
-    #[ORM\Column(type: 'uuid', unique: true)]
-    #[ORM\CustomIdGenerator('doctrine.uuid_generator')]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private ?string $id = null;
 
 
