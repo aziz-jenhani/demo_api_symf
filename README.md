@@ -8,7 +8,7 @@ git clone https://github.com/aziz-jenhani/demo_api_symf.git
 ```
 Composer Installation
 ```shell
-composer intall
+composer install
 ```
 ## Configure the App
 
