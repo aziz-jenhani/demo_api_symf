@@ -14,7 +14,7 @@ use OpenApi\Attributes\Tag;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-#[Route('/api')]
+#[Route('/api/security')]
 #[Tag(name: 'Security')]
 class SecurityController extends AbstractController
 {

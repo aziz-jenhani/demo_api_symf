@@ -24,7 +24,7 @@ security:
 
         main:
             lazy: true
-            stateless: true
+            stateless: false
             jwt: ~
 
 
@@ -40,11 +40,11 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
-        - { path: ^/api/register, roles: PUBLIC_ACCESS }
+        - { path: ^/api/security, roles: PUBLIC_ACCESS }
         - { path: ^/api/doc, roles: PUBLIC_ACCESS }
 
         #   - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
