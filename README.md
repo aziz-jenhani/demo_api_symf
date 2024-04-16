@@ -4,7 +4,7 @@
 
 Clone the project
 ```shell
-git clone https://gitlab.fondative.com/stacks-fdt/applications/symfony-stacks/api.git
+git clone https://github.com/aziz-jenhani/demo_api_symf.git
 ```
 Composer Installation
 ```shell
