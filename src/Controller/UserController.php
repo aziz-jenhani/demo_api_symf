@@ -169,7 +169,7 @@ class UserController extends AbstractController
         return $this->okResponse($user);
     }
 
-    #[Route('/api/users/{id}', methods: ['PUT', 'PATCH'])]
+    #[Route('/api/users/{id}', methods: ['PUT'])]
     #[OA\Response(
         response: 200,
         description: 'Modifie un utilisateur',

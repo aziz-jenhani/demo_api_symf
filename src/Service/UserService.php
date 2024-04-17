@@ -8,13 +8,21 @@ use App\Entity\User;
 use App\Mapper\UserMapper;
 use App\Repository\UserRepository;
 use App\Exception\NotFoundException;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 
 class UserService
 {
     public function __construct(
         private UserRepository $userRepository,
-        private UserMapper $userMapper
+        private UserMapper $userMapper,
+        private TokenGeneratorInterface $tokenGenerator,
+        private MailerInterface $mailer
     ) {
+    }
+    public function loadUserByEmail(string $email): ?User
+    {
+        return $this->userRepository->findOneByEmail($email);
     }
 
     public function get(string $id): User
