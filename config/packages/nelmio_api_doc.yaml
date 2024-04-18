@@ -24,6 +24,20 @@ nelmio_api_doc:
                                 application/json:
                                     schema:
                                         $ref: '#/components/schemas/Token'
+            /api/security/refresh-token:
+                post:
+                    tags:
+                        - Auth
+                    summary: Refresh JWT token
+                    description: Refreshes the JWT token to obtain a new access token.
+                    responses:
+                        '200':
+                            description: New JWT token obtained successfully
+                            content:
+                                application/json:
+                                    schema:
+                                        $ref: '#/components/schemas/Token'
+
         components:
             schemas:
                 Token:

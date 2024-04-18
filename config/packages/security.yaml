@@ -21,11 +21,19 @@ security:
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
-
+        refresh_token:
+            pattern: ^/api/security/refresh-token
+            stateless: true
+            security: false
+            json_login:
+                check_path: /api/security/refresh-token
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
         main:
             lazy: true
             stateless: false
             jwt: ~
+
 
 
             # activate different ways to authenticate

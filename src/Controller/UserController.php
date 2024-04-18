@@ -100,9 +100,6 @@ class UserController extends AbstractController
         required: false,
         schema: new OA\Schema(type:"integer", default:10)
         )]
-
-
-
     #[IsGranted('ROLE_ADMIN')]
     #[Security(name: 'Bearer')]
     public function list(Request $request): Response

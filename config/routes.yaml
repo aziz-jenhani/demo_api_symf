@@ -12,7 +12,10 @@ app.swagger:
     path: /api/doc.json
     methods: GET
     defaults: { _controller: nelmio_api_doc.controller.swagger }
-
+api_refresh_token:
+    path: /api/security/refresh-token
+    controller: App\Controller\SecurityController::refreshToken
+    methods: [ 'POST' ]
 login:
     path: /api/login
 
